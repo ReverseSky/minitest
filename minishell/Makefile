@@ -3,12 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: clecat <clecat@student.42.fr>              +#+  +:+       +#+         #
+#    By: greg <greg@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/20 11:44:23 by clecat            #+#    #+#              #
-#    Updated: 2023/02/14 09:23:23 by clecat           ###   ########.fr        #
+#    Created: 2024/07/29 13:08:42 by greg              #+#    #+#              #
+#    Updated: 2024/07/29 13:08:44 by greg             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -g #-fsanitize=address
