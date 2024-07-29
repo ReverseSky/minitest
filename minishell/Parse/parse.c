@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-//5 fonctions
 //malloc la taille du tableau
 char	**init_exp(char **tab)
 {

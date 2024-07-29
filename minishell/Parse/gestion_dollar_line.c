@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-//5 fonctions
 //recupere la ligne de la var correspondante
 char	*recup_val(char *str)
 {

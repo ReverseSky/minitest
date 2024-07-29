@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-//retour erreur ctrl c : 1 et 130 ; 131 pour ctrl-\ quit et 127 quand rien 
 //fonction d'interuption du programme ctrl c
 // pid = -1 is the case we are a promt, pid = 0 is child, pid > 0 is parent
 void	ft_ctrl_c(int signum)

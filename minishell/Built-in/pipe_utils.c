@@ -6,13 +6,12 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:18:08 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:43:05 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/29 13:12:43 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-//5 fonctions
 // exec the child process in the while
 void	ft_child(t_cmd **cmd, int **pp, int i)
 {

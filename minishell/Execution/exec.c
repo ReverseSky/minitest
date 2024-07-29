@@ -6,12 +6,11 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:19:13 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:42:59 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/29 13:12:41 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-// 3 fonctions
 //recupere les paths possible
 char	**recup_path(t_min *mini)
 {

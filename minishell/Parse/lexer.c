@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-//5 fonctions
 int	cotes_dollar(t_min *mini, char *line)
 {
 	if (verif_cotes(line) == 1)

@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-//3 fonctions
 char	*recup_rcmd(char *line)
 {
 	char	*tmp;

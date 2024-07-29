@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-//2 fonctions
 // return 1 if there is at least one double pipe : '| |'
 int	is_there_double_pipe(char *line)
 {

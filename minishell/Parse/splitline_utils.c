@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-//4 fonctions
 // return 0 if the '(39) or the "(34) are mixed or not by even number
 int	iscotevalid(char *line)
 {

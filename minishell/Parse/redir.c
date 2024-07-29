@@ -28,7 +28,7 @@ int	fd_return_redir_in(t_cmd **cmd, int last_redir, int fd)
 	return (0);
 }
 
-//
+
 int	heredoc_launcher(t_cmd **cmd, int i, int j, int *fd)
 {
 	if (ft_strcmp(cmd[i]->stdin[j], "<<") == 0)

@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-//5 fonctions
 //affiche erreur
 void	aff_err(char **cmd)
 {

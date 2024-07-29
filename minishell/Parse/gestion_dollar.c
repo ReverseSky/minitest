@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-//5 fonctions
 //verifie la position du ?
 void	verif_posreterr(char **line)
 {

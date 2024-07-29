@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-//2 fonctions
 // main loop of spliter
 char	**spliter_loop(char **resu, char *temp)
 {

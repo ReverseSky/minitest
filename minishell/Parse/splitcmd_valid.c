@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-//3fonctions
 // Check the Valdity of Redirections IN,
 // if in0 is < << > >> and in1 not NULL and not < > << >> | then return 1
 int	cvrin(t_cmd **resu, int i, int *j)

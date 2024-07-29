@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-//1 fonctions
 //remove all the multiple char to keep only one or none if remove_both_char=1
 char	*remove_double_char(char *line, char c, int remove_both_char)
 {

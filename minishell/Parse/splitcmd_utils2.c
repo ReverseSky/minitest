@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-//5 fonctions
 // initialise the variable resu in pre_split
 char	**ft_init_resu(char *line)
 {

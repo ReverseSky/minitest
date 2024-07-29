@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-//4 fonctions
 //supprime les cotes exterieurs
 char	*rm_cotesline(char *line)
 {

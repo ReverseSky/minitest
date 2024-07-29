@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-//4 fonctions
 //supprime le dollar en dehors des cotes 
 char	*rmd_bf_cotes(char *line, int savedollar)
 {

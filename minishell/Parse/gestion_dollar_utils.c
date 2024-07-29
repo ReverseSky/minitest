@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-//5 fonctions 
 //verifie quel cas present 
 int	verif_dollarcase(char *line)
 {

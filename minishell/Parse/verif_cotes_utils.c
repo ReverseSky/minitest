@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-// 3fonctions
 //cut a partir d'ici
 char	*get_sline(char *line, char cotes)
 {

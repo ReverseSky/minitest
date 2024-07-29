@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../minishell.h"
-//4 fonctions
+
 //get indice endcotes
 int	get_endcotes(char *line, char cotes, int j)
 {

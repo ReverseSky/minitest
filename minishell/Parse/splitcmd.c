@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-//5 fonctions
 // transform the char* in char** delimited by space
 char	**pre_split(char *line)
 {

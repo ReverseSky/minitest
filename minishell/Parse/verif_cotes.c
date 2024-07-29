@@ -12,7 +12,6 @@
 
 #include "../minishell.h"
 
-//5 fonctions
 //reconstruit la line en fonction
 char	*join_line(char *tmp, char *s_line, char *e_line)
 {

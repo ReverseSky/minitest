@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-//5 fonctions
 // count the commands
 int	count_cmd(char *line)
 {
