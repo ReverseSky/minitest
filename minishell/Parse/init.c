@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:20:26 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:43:12 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/29 20:20:18 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	init_struct(t_min *mini, char **envp)
 	mini->rl_done = 0;
 	mini->in_cmd = 0;
 	mini->pid = -1;
+	create_oldpwd(mini);
 }
 
 //creer la copie d'export au tout début
