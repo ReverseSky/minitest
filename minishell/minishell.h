@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:07:24 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 20:19:50 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/30 11:59:01 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	cd(t_min *mini, char **cmd);
 void	change_value_pwd(char **str);
 void	change_value_oldpwd(char **str, char *pwd, char *oldpwd);
 void create_oldpwd(t_min *mini);
+int check_oldpwd(char **str);
 
 //cd_tild.c 5 fonctions
 char	*cd_tildpwd(char *str);

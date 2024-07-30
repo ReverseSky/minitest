@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:20:26 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 20:20:18 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/30 11:58:21 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,13 @@ void	init_struct(t_min *mini, char **envp)
 	mini->rl_done = 0;
 	mini->in_cmd = 0;
 	mini->pid = -1;
-	create_oldpwd(mini);
 }
 
 //creer la copie d'export au tout début
 void	init_export(t_min *mini)
 {
+	if (check_oldpwd(mini->c_env) == 0)
+		create_oldpwd(mini);
 	mini->c_exp = init_exp(mini->c_env);
 	mini->c_exp = order_exp(mini->c_exp, mini->c_env);
 }

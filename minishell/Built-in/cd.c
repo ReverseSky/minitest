@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:16:53 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 20:20:59 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/30 11:56:05 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,4 +153,17 @@ void create_oldpwd(t_min *mini)
 	tmp2 = recup_pwd(mini->c_env);
 	oldpwd = ft_strjoin(tmp, tmp2);
 	add_valenv(mini, oldpwd);
+}
+int check_oldpwd(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_strncmp(str[i], "OLDPWD=", 7) == 0)
+			return (1);
+		i++;
+	}
+	return (0);
 }
