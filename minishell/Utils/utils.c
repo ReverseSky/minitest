@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:22:32 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:43:32 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 13:24:35 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	if (n == 0)
 		return (-1);
 	while (s3[i] && s4[i] && s3[i] == s4[i] && j < n)
-	{	
+	{
 		i++;
 		j++;
 	}
@@ -73,25 +73,24 @@ int	strdigit(char *str)
 	return (0);
 }
 
-char	*ft_strdup(char *s)
+char    *ft_strdup(char *src)
 {
-	char	*dest;
-	int		i;
+    int i;
+    char *dest;
+    size_t len;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	dest = malloc(sizeof(char) * (i + 1));
-	if (dest == 0)
-		return (NULL);
-	i = 0;
-	while (s[i] != '\0')
-	{
-		dest[i] = s[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+    i = 0;
+    len = ft_strlen(src);
+    dest = (char *)malloc(len + 3);
+    if (!dest)
+        return (NULL);
+    while (src[i])
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    dest[i] = '\0';
+    return (dest);
 }
 
 int	ft_isdigit(char c)

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   cd_tild.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:16:40 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:42:41 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 10:33:15 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
 
 //recupere le chemin donné apres le tild
 char	*cd_tildpwd(char *str)

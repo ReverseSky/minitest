@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export_change_val.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:17:37 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:42:53 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 11:46:25 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ char	*addegal(char *cmp)
 	int		i;
 
 	i = 0;
-	tmp = malloc(sizeof(char) * ft_strlen(cmp) + 1);
+	tmp = malloc(sizeof(char) * ft_strlen(cmp) + 2);
 	while (cmp[i])
 	{
 		tmp[i] = cmp[i];

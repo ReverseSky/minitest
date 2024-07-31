@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redir.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:21:02 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:43:20 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 10:39:05 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	fd_return_redir_in(t_cmd **cmd, int last_redir, int fd)
 		return (fd);
 	return (0);
 }
-
 
 int	heredoc_launcher(t_cmd **cmd, int i, int j, int *fd)
 {

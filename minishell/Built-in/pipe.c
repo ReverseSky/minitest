@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipe.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:18:13 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:43:04 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 10:46:12 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,13 @@ int	piping(void)
 			ft_parent(pp, i);
 		i++;
 	}
+	end_piping(i, pp);
+	return (1);
+}
+void end_piping(int i, int **pp)
+{
 	ft_last_command(g_mini.struct_cmd, pp, i);
 	ft_wait_all();
 	free_tab((char **)pp);
 	echo_control_seq(0);
-	return (1);
 }

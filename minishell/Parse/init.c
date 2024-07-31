@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:20:26 by greg              #+#    #+#             */
-/*   Updated: 2024/07/30 11:58:21 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 10:38:44 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	aff_err(char **cmd)
 //initialise la structure
 void	init_struct(t_min *mini, char **envp)
 {
-	if (envp[0] == NULL) //pour gestion cas env -i
+	if (envp[0] == NULL)
 	{
-		printf("only getpwd & oldpwd\n");//en cours
+		printf("only getpwd & oldpwd\n");
 	}
 	else
 		mini->c_env = ft_cpytab(envp);

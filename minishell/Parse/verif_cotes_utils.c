@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verif_cotes_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:21:48 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:43:26 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 11:44:45 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*get_sline(char *line, char cotes)
 	j = ft_strlen(line) - i;
 	if (i != 0)
 	{
-		s_line = malloc(sizeof(char) * ((ft_strlen(line) - j) + 1));
+		s_line = malloc(sizeof(char) * ((ft_strlen(line) - j) + 2));
 		j = 0;
 		while (line[j] && j <= i)
 		{
@@ -47,7 +47,7 @@ char	*cpy_eline(char *line, int j)
 	char	*e_line;
 	int		i;
 
-	e_line = malloc(sizeof(char) * ((ft_strlen(line) - j) + 1));
+	e_line = malloc(sizeof(char) * ((ft_strlen(line) - j) + 2));
 	i = 0;
 	while (line[j] != '\0')
 	{
@@ -91,7 +91,7 @@ char	*tmpline(char *line, int start, int end)
 	char	*tmp;
 	int		i;
 
-	tmp = malloc(sizeof(char) * ((end - start) + 1));
+	tmp = malloc(sizeof(char) * ((end - start) + 2));
 	i = 0;
 	while (line[start] && start != end)
 	{

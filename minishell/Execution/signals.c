@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signals.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:19:27 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:55:48 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 10:38:13 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	echo_control_seq(int c)
 {
 	struct termios	conf;
 
-	ioctl(ttyslot(), TIOCGETA, &conf);
+	ioctl(ttyslot(), TIOCGETD, &conf);
 	if (c == 1)
 	{
 		conf.c_lflag |= ECHOCTL;
@@ -95,10 +95,10 @@ void	echo_control_seq(int c)
 	}
 	else if (c == 0)
 	{
-		conf.c_lflag &= ~(ECHOCTL);	
+		conf.c_lflag &= ~(ECHOCTL);
 		conf.c_cc[VQUIT] = 0;
 	}
-	ioctl(ttyslot(), TIOCSETA, &conf);
+	ioctl(ttyslot(), TIOCSETD, &conf);
 }
 
 //numero_du_signal, procedure a faire

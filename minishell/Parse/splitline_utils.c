@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   splitline_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:21:30 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:43:24 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 10:42:15 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	is_single_pipe(int j)
 	while (i < j)
 	{
 		if (g_mini.line[i] == '\'' || g_mini.line[i] == '"')
-				cote = (cote + 1) % 2;
+			cote = (cote + 1) % 2;
 		i++;
 	}
 	if (j == 0)

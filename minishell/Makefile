@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: greg <greg@student.42.fr>                  +#+  +:+       +#+         #
+#    By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 13:08:42 by greg              #+#    #+#              #
-#    Updated: 2024/07/29 13:08:44 by greg             ###   ########.fr        #
+#    Updated: 2024/07/31 11:16:21 by grobledo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g #-fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g
 NAME	= minishell
 LIBPATH	= ~/.brew/Cellar/readline/8.2.1/lib/ 
 SRC		=	Execution/main.c \
@@ -24,6 +24,7 @@ SRC		=	Execution/main.c \
 		Built-in/pipe.c \
 		Built-in/cd.c \
 		Built-in/cd_utils.c \
+		Built-in/cd_utils2.c \
 		Built-in/cd_tild.c \
 		Built-in/echo.c \
 		Built-in/env.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   splitcmd_valid.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:21:21 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:43:23 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 10:41:51 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	cvrin(t_cmd **resu, int i, int *j)
 		write(2, ERR_TOKEN, ft_strlen(ERR_TOKEN));
 		g_mini.ret_err = 258;
 		return (0);
-	}	
+	}
 	if ((in0[0] == '<' || in0[0] == '>') && (in1[0] == '<' || in1[0] == '>'))
 	{
 		ft_print_error_msg3(ERR_TOKEN_SHORT, in1, "'\n");
@@ -52,7 +52,7 @@ int	cvrout(t_cmd **resu, int i, int *j)
 		write(2, ERR_TOKEN, ft_strlen(ERR_TOKEN));
 		g_mini.ret_err = 258;
 		return (0);
-	}	
+	}
 	if ((in0[0] == '<' || in0[0] == '>') && (in1[0] == '<' || in1[0] == '>'))
 	{
 		ft_print_error_msg3(ERR_TOKEN_SHORT, in1, "'\n");

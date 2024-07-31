@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:17:48 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:42:54 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 11:45:37 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	while (s2[j])
 		j++;
-	str = malloc(sizeof(*s1) * (i + j + 1));
+	str = malloc(sizeof(*s1) * (i + j + 2));
 	if (str == 0)
 		return (NULL);
 	i = 0;

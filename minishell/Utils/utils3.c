@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:22:44 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:43:34 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 10:42:41 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static char	*ft_mallocresu(int lens1, int trimdeb, int trimfin, char *s1)
 	}
 	resu[i - trimdeb] = '\0';
 	return (resu);
-}	
+}
 
 // remove the char contained in set at the beginning aand the end os s1
 char	*ft_strtrim(char *s1, char *set)

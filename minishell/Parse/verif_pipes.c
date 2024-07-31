@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verif_pipes.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:22:01 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:43:28 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 10:37:50 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	is_there_double_pipe(char *line)
 	{
 		if (line[i - 2] == '|' && line[i - 1] == ' ' && line[i] == '|')
 			return (1);
-		else if(line[i - 2] == '|' && line[i - 1] == '|')
+		else if (line[i - 2] == '|' && line[i - 1] == '|')
 			return (1);
 		i++;
 	}

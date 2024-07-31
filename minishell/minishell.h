@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:07:24 by greg              #+#    #+#             */
-/*   Updated: 2024/07/30 11:59:01 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 10:52:07 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,12 @@
 # include <readline/history.h>
 # include <sys/wait.h>
 # include <termios.h>
-#include <sys/ioctl.h>
+# include <sys/ioctl.h>
 
 /*----------ERROR MES-----------*/
 # define ERR_TOKEN "minishell: syntax error near unexpected token `newline'\n"
 # define ERR_TOKEN_SHORT "minishell: syntax error near unexpected token `"
 # define ERR_NUM "numeric argument required"
-#define TIOCGETA        _IOR('t', 19, struct termios)
-#define TIOCSETA        _IOW('t', 20, struct termios)   /* set termios struct */
 
 /*----------STRUCTURE-----------*/
 //structure tableau de cmd
@@ -65,64 +63,65 @@ extern t_min	g_mini;
 //t_min	g_mini;
 
 /*--------------------------BUILT-IN-----------------------------------*/
-//13 fichiers
-//cd.c 5 fonctions
+//cd.c
 void	cd(t_min *mini, char **cmd);
 void	change_value_pwd(char **str);
 void	change_value_oldpwd(char **str, char *pwd, char *oldpwd);
-void create_oldpwd(t_min *mini);
-int check_oldpwd(char **str);
 
-//cd_tild.c 5 fonctions
+//cd_tild.c
 char	*cd_tildpwd(char *str);
 void	change_valtab(t_min *mini, char **cmd);
 void	change_valcdtild(t_min *mini, char **cmd);
 void	cd_noarg(t_min *mini);
 
-//cd_utils.c 5 fonctions
+//cd_utils.c
 char	*recup_pwd(char **str);
 char	*recup_oldpwd(char **str);
 int		check_arg(char *str);
 void	cpy_value(char *name_var, char **str, char *new_val);
 
-//echo.c 4 fonctions
+//cd_utils2.c
+void	create_oldpwd(t_min *mini);
+int		check_oldpwd(char **str);
+
+//echo.c
 void	echo(char **cmd);
 
-//env.c 4 fonction
+//env.c
 void	ft_env(t_min *mini, char **cmd);
 void	change_val(char **str, char *new_pwd, char *pwd, char *oldpwd);
 void	add_reponame(char **str, char *repo);
 
-//exit_pwd_utils.c 3 fonctions
+//exit_pwd_utils.c
 void	verif_arg_exit(t_min *mini, int i, char **cmd);
 
-//exit_pwd.c 4 fonctions
+//exit_pwd.c
 int		recup_new_pwd(char **str);
 void	exit_min(t_min *mini, char **cmd);
 void	pwd(char **c_env, char **cmd);
 void	change_val_pwdpath(char **str, char **cmd);
 
-//export_addvar.c 3 fonctions
+//export_addvar.c
 void	add_valexp(t_min *mini, char *str);
 void	add_valenv(t_min *mini, char *str);
 
-//export_change_val 5 fonctions
+//export_change_val
 char	*recup_name(char *cmp);
 char	*addegal(char *cmp);
 void	redir_changeval(t_min *mini, char *str);
 
-//export_utils.c 5 fonctions
+//export_utils.c
 char	**fill_exp(char **new_val, char *str);
 char	*ft_strjoin(char const *s1, char const *s2);
 int		tablen(char **s1);
 int		check_exp(char **s1, char **s2, int index);
 void	print_export(char **str);
 
-//export_utils2.c 2 fonctions
+//export_utils2.c
 int		verif_modif_var(char **str, char *cmp);
 void	new_vars(t_min *mini, char *str, int y, char **cmd);
 
-//export.c 5 fonctions
+//export.c
 char	**order_exp(char **s1, char **s2);
 int		verif_modif_var(char **str, char *cmp);
 void	export(t_min *mini, char **cmd);
@@ -135,11 +134,11 @@ void	signal_exit(void);
 void	signaux(void);
 void	signal_exit(void);
 
-//unset.c 4 fonctions
+//unset.c
 int		check_var(char *str);
 void	unset(t_min *mini, char **cmd);
 
-//annexe.c 3 fonctions
+//annexe.c
 char	*verif_pwd(char *line);
 char	*get_namevar(char *str);
 char	*get_tmp(char *line, char cotes);
@@ -147,22 +146,21 @@ int		verif_space(char *str);
 int		verif_cmdcotesempty(char *line);
 
 /*------------------------PARSE-------------------------------------------*/
-//12 fichiers
-//gestion_dollar.c 4 fonctions
+//gestion_dollar.c
 char	*redir_line(char *line, int nb_dollar);
 
-//gestion_dollar_utils.c 5 fonctions
+//gestion_dollar_utils.c
 char	*recup_namevar(char *line);
 char	*rm_d_dollar(char *tmp);
 int		verif_dollarcase(char *line);
 int		verif_var(char *name_var);
 int		count_nbdollar(char *line);
 
-//gestion_dollar_line.c 5 fonctions
+//gestion_dollar_line.c
 char	*recup_valvar(char *name_var);
 char	*change_line(char *name_var, char *line);
 
-//gestion_dollar_quotes.c 5 fonctions
+//gestion_dollar_quotes.c
 char	*rm_dollarcotes(char *line, int i, int savedollar);
 char	*rmd_bf_cotes(char *line, int savedollar);
 int		verif_cotes(char *line);
@@ -172,21 +170,21 @@ int		verif_redirdollar(char *line);
 //gestion_dollar_utils2.c
 char	*copy_tmp(char *line, int i);
 
-//init.c 5 fonctions
+//init.c
 char	*recup_valhome(char	**c_env);
 void	init_struct(t_min *mini, char **envp);
 void	init_export(t_min *mini);
 void	free_all(t_min mini);
 void	aff_err(char **cmd);
 
-//lexer.c 5 fonctions
+//lexer.c
 void	redir_pipe(t_min *mini, t_cmd **cmd);
 void	redirection(t_min *mini, t_cmd **cmd);
 void	parcour_line(t_min *mini);
 char	*modif_line(char *line, int nb_dollar);
 void	redirection2(t_min *mini, t_cmd *cmd);
 
-//parse.c 4 fonctions
+//parse.c
 char	**init_cpy(char **str, char **dest);
 char	**ft_cpytab(char **tab);
 char	**init_exp(char **tab);
@@ -203,12 +201,13 @@ void	ft_wait_all(void);
 void	ft_exec2(t_min *mini, char **all_path, char **pathcmd, char **cmd);
 void	ft_set_pathexec2(t_min *mini, char **cmd);
 int		piping(void);
+void end_piping(int i, int **pp);
 
 // printstruc.c
 void	printstruc(t_cmd *cmd);
 void	printstruc2(t_cmd **cmd);
 
-//modif_tcmd.c 5 fonctionc
+//modif_tcmd.c
 void	modif_cmd(char **cmd);
 void	modif_stdin(char **stdin);
 void	modif_stdout(char **stdout);
@@ -251,7 +250,7 @@ char	*remove_double_char_q(char *line, char c);
 //splitcmd_valid.c
 t_cmd	**validation_cmd(t_cmd **resu);
 
-//splitline.c 3 fonctions
+//splitline.c
 char	**spliter(void);
 
 // splitline_utils.c
@@ -260,11 +259,11 @@ int		count_instruct(char *line);
 int		is_single_pipe(int j);
 void	*ft_test(void *var, void *error);
 
-//verif_cotes.c 5 fonctions
+//verif_cotes.c
 void	verif_cmdcotes(t_min *mini);
 char	*rm_cotes(char *line, char cotes);
 
-//verif_cotes_utils.c 5 fonctions
+//verif_cotes_utils.c
 char	*get_sline(char *line, char cotes);
 char	*get_eline(char *line, char cotes);
 char	*changecotesline(char *line, char cotes);
@@ -276,7 +275,7 @@ char	*check_cmd(char *line);
 char	*verif_pipes(char *line);
 void	verif_tmp(char *line);
 
-//utils.c 5 fonctions
+//utils.c
 char	*join_linetmp(char *s_line, char *tmp, char *e_line);
 char	*join_wout_tmp(char *s_line, char *e_line);
 int		count_cotes(char *line);
@@ -297,21 +296,21 @@ char	*ft_itoa(int nb);
 //ft_split.c (libft)
 char	**ft_split(char const *s, char c);
 
-//utils.c 5 fonctions
+//utils.c
 char	*ft_strdup(char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strlen(char *str);
 int		strdigit(char *str);
 int		ft_isdigit(char c);
 
-// utils2.c 5 fonctions
+// utils2.c
 int		ft_strcmp(char *s1, char *s2);
 int		ft_atoi(const char *str);
 int		find_cotes(char *line);
 void	ft_bzero(void *s, int n);
 char	*ft_strchr(const char *s, int c);
 
-// utils3.c 5 fonctions
+// utils3.c
 char	*ft_strtrim(char *s1, char *set);
 void	*ft_calloc(int count, int size);
 
@@ -324,14 +323,14 @@ void	rl_replace_line(const char *text, int clear_undo);
 
 /*-----------------------------------------------------------------------*/
 
-//exec.c 5 fonctions
+//exec.c
 char	**recup_path(t_min *mini);
 char	**init_cmd(char **cmd, char **pathcmd);
 void	ft_execve(t_min *mini, char **all_path, char **pathcmd, char **cmd);
 void	ft_exec(t_min *mini, char **all_path, char **pathcmd, char **cmd);
 void	ft_set_pathexec(t_min *mini, char **cmd);
 
-//exec_utils 2 fonctions
+//exec_utils
 char	*recup_pathexec(t_min *mini);
 int		aff_errcmd(char **cmd);
 int		verif_cmd(char **all_path, char **pathcmd, char **cmd);
