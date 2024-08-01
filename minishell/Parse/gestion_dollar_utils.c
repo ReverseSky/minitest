@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:20:11 by greg              #+#    #+#             */
-/*   Updated: 2024/07/29 11:43:08 by greg             ###   ########.fr       */
+/*   Updated: 2024/07/31 17:28:32 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	*recup_namevar(char *line)
 	while (line[i] && line[i] != '\0' && line[i] != '$' && line[i]
 		!= ' ' && line[i] != '\'' && line[i] != '"' && line[i] != '/')
 		i++;
-	tmp = malloc(sizeof(char) * (i - j + 1));
+	tmp = malloc(sizeof(char) * (i - j + 5));
 	i = j + 1;
 	j = 0;
 	while (line[i] != '\0' && line[i] != '$' && line[i] != ' '

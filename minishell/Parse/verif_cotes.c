@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verif_cotes.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:21:55 by greg              #+#    #+#             */
-/*   Updated: 2024/07/31 13:21:35 by grobledo         ###   ########.fr       */
+/*   Updated: 2024/07/31 17:45:26 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,13 @@ char	*rm_cotes(char *line, char cotes)
 	int		i;
 	int		j;
 
-	i = 1;
+	i = 0;
 	j = 0;
 	tmp = malloc(sizeof(char) * ft_strlen(line) + 1);
 	while (line[i])
 	{
+		if (i == 0 && (line[i] == cotes && (line[i + 1] != cotes)))
+			i++;
 		while (line[i] == cotes && (line[i + 1] != cotes
 				&& line[i - 1] != cotes))
 			i += 1;
