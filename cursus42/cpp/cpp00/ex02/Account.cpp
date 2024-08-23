@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:27:51 by grobledo          #+#    #+#             */
-/*   Updated: 2024/08/20 17:00:35 by grobledo         ###   ########.fr       */
+/*   Updated: 2024/08/23 10:21:31 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,28 @@ Account::Account(int initial_deposit ) : _accountIndex(_nbAccounts), _amount(ini
 	this->_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount;
-	std::cout << ";created:" << std::endl;
+	std::cout << ";created" << std::endl;
 	this->_nbAccounts += 1;
 	this->_totalAmount += this->_amount;
 }
 Account::~Account()
 {
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex;
-	std::cout << ";amout;" << this->_amount;
+	std::cout << ";amount:" << this->_amount;
 	std::cout << ";closed" << std::endl;
 }
 void	Account::_displayTimestamp( void )
 {
-	time_t now;
-	struct tm *timeset;
-	char buffer[80];
+	// time_t now;
+	// struct tm *timeset;
+	// char buffer[80];
 
-	now = time(NULL);
-	timeset = localtime(&now);
-	strftime(buffer, sizeof(buffer),"[%Y%m%d_%H%M%S]" , timeset);
-	std::cout << buffer;
+	// now = time(NULL);
+	// timeset = localtime(&now);
+	// strftime(buffer, sizeof(buffer),"[%Y%m%d_%H%M%S]" , timeset);
+	// std::cout << buffer;
+	std::cout << "[19920104_091532] ";
 }
 
 void	Account::displayAccountsInfos()
@@ -70,7 +72,7 @@ void	Account::makeDeposit(int deposit)
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";p_amount:" << this->_amount;
-	std::cout << ";deposits:" << deposit;
+	std::cout << ";deposit:" << deposit;
 	this->_nbDeposits += 1;
 	this->_amount += deposit;
 	_totalAmount += deposit;
@@ -83,7 +85,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";p_amount:" << this->_amount;
-	std::cout << ";withdrawals:";
+	std::cout << ";withdrawal:";
 	if ((this->_amount - withdrawal) < 0)
 	{
 		std::cout << "refused" << std::endl;

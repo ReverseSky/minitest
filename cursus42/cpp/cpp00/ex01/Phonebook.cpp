@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:07:50 by grobledo          #+#    #+#             */
-/*   Updated: 2024/08/17 22:33:57 by grobledo         ###   ########.fr       */
+/*   Updated: 2024/08/23 10:53:27 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,36 @@ void	Phonebook::add_contact()
 
 	if (this->current_contact == 8)
 		this->current_contact = 0;
+	do
+	{
 	system("clear");
 	std::cout << "type first name of the contact : " << std::endl;
 	std::getline (std::cin, firstname);
+	} while(firstname.empty() || firstname.find_first_not_of(" \t") == std::string::npos);
+	do
+	{
 	system("clear");
 	std::cout << "type last name of the contact : " << std::endl;
 	std::getline (std::cin, lastname);
+	} while(firstname.empty() || lastname.find_first_not_of(" \t") == std::string::npos);
+	do
+	{
 	system("clear");
 	std::cout << "type nickname of the contact : " << std::endl;
 	std::getline (std::cin, nickname);
+	} while(firstname.empty() || nickname.find_first_not_of(" \t") == std::string::npos);
+	do
+	{
 	system("clear");
 	std::cout << "type phone number of the contact : " << std::endl;
 	std::getline (std::cin, phonenumb);
+	} while(firstname.empty() || phonenumb.find_first_not_of(" \t") == std::string::npos || phonenumb.find_first_not_of("0123456789") != std::string::npos);
+	do
+	{
 	system("clear");
 	std::cout << "type secret of the contact : " << std::endl;
 	std::getline (std::cin, secret);
+	} while(firstname.empty() || secret.find_first_not_of(" \t") == std::string::npos);
 	system("clear");
 	this->array[this->current_contact].setfirst(firstname);
 	this->array[this->current_contact].setlast(lastname);
