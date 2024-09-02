@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 11:44:51 by greg              #+#    #+#             */
-/*   Updated: 2024/08/27 16:19:27 by greg             ###   ########.fr       */
+/*   Created: 2024/08/28 18:00:08 by grobledo          #+#    #+#             */
+/*   Updated: 2024/09/02 14:12:11 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#pragma once
 
-#include <iostream>
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-class Fixed
+#include "ClapTrap.hpp"
+
+class FragTrap : virtual public ClapTrap
 {
-	public:
-		Fixed();
-		Fixed(const Fixed &copy);
-		Fixed	&operator=(const Fixed &op);
-		~Fixed();
 
-		int	getRawBits(void) const;
-		void	setRawBits(int const raw);
+public:
+	FragTrap(void);
+	FragTrap(std::string name);
+	FragTrap(const FragTrap &copy);
+	~FragTrap();
 
-		private:
-			int	_value;
-			static const int	fractionnal_bits = 8;
-	};
+	FragTrap	&operator=(const FragTrap &op);
 
+	void highFivesGuys(void);
+	
+	private:
+	
+};
 
 
 #endif

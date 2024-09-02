@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 11:44:51 by greg              #+#    #+#             */
-/*   Updated: 2024/08/27 16:19:27 by greg             ###   ########.fr       */
+/*   Created: 2024/09/02 18:02:22 by greg              #+#    #+#             */
+/*   Updated: 2024/09/02 18:06:27 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+
+#pragma once
+
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
+#include <string>
 
-class Fixed
+class WrongAnimal
 {
 	public:
-		Fixed();
-		Fixed(const Fixed &copy);
-		Fixed	&operator=(const Fixed &op);
-		~Fixed();
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(const WrongAnimal &copy);
+		~WrongAnimal();
 
-		int	getRawBits(void) const;
-		void	setRawBits(int const raw);
+		void	makeSound() const;
+		WrongAnimal	&operator=(const WrongAnimal &op);
+		std::string	getType() const;
+		void	setType();
 
-		private:
-			int	_value;
-			static const int	fractionnal_bits = 8;
-	};
+	protected:
+		std::string type;
 
+};
 
 
 #endif

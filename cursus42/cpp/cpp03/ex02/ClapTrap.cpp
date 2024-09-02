@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 14:47:18 by greg              #+#    #+#             */
-/*   Updated: 2024/08/28 14:23:05 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/01 06:21:18 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 }
 ClapTrap::ClapTrap() 
 {
-	std::cout << "Basic ClapTrap was created !" << std::endl;
+	std::cout << "Default ClapTrap was created !" << std::endl;
 }
 
 

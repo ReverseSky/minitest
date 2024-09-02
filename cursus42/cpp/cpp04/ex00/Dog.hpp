@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 11:44:51 by greg              #+#    #+#             */
-/*   Updated: 2024/08/27 16:19:27 by greg             ###   ########.fr       */
+/*   Created: 2024/09/02 14:08:25 by greg              #+#    #+#             */
+/*   Updated: 2024/09/02 18:45:14 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#pragma once
 
-#include <iostream>
+#ifndef DOG_HPP
+#define DOG_HPP
 
-class Fixed
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-	public:
-		Fixed();
-		Fixed(const Fixed &copy);
-		Fixed	&operator=(const Fixed &op);
-		~Fixed();
 
-		int	getRawBits(void) const;
-		void	setRawBits(int const raw);
+public:
+	Dog();
+	Dog(const Dog &copy);
+	~Dog();
 
-		private:
-			int	_value;
-			static const int	fractionnal_bits = 8;
-	};
-
-
+	Dog	&operator=(const Dog &op);
+	void	makeSound(void) const;
+	
+	private:
+	
+};
 
 #endif

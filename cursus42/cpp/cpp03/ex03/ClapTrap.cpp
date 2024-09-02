@@ -6,15 +6,20 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 14:47:18 by greg              #+#    #+#             */
-/*   Updated: 2024/09/01 06:21:29 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/02 13:02:14 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() 
+{
+	std::cout << "ClapTrap default constructor has been called !" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name) : name(name), hitpoint(10), energypoint(10), attackdmg(0)
 {
-	std::cout << "ClapTrap " << name << "is created ! his stats are : " << std::endl;
+	std::cout << "ClapTrap " << name << " is created ! his stats are : " << std::endl;
 	std::cout << "- Hit points : " << hitpoint << std::endl;
 	std::cout << "- Energy points : " << energypoint << std::endl;
 	std::cout << "- Attack damage : " << attackdmg << std::endl;
@@ -24,10 +29,6 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
-}
-ClapTrap::ClapTrap() 
-{
-	std::cout << "Default ClapTrap was created !" << std::endl;
 }
 
 
