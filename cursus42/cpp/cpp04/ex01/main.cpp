@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:54:38 by greg              #+#    #+#             */
-/*   Updated: 2024/09/04 05:05:26 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/04 04:42:18 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,29 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 
-// int main()
-// {
-// const Animal* meta = new Animal();
-// const Animal* j = new Dog();
-// const Animal* i = new Cat();
-// std::cout << j->getType() << " " << std::endl;
-// std::cout << i->getType() << " " << std::endl;
-// i->makeSound(); //will output the cat sound!
-// j->makeSound();
-// meta->makeSound();
+int	main() 
+{
+	const Animal* j = new Dog();
+	const Animal* k = new Cat();
+	delete j;
+	delete k;
 
-// delete i;
-// delete j;
-// delete meta;
+	Animal	*array[100];
+	int		i = 0;
 
-// return 0;
-// }
+	while (i < 50)
+		array[i++] = new Dog();
+	while (i < 100)
+		array[i++] = new Cat();
 
+	array[4]->makeSound();
+	array[72]->makeSound();
+	for (i = 0; i < 100; i++)
+	delete array[i];
+	
 
-int	main() {
-	WrongAnimal	*unknown = new WrongAnimal();
-	Dog		*dog = new Dog();
-
-	std::cout << unknown->getType() << " " << std::endl;
-	std::cout << dog->getType() << " " << std::endl;
-
-	unknown->makeSound();
-	dog->makeSound();
-	delete unknown;
-
-	unknown = new WrongCat();
-	unknown->makeSound();
-	delete dog;
-	delete unknown;
+	return 0;
 }
+

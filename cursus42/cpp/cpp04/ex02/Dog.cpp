@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 14:02:02 by greg              #+#    #+#             */
-/*   Updated: 2024/09/04 01:59:11 by greg             ###   ########.fr       */
+/*   Created: 2024/09/02 17:17:32 by greg              #+#    #+#             */
+/*   Updated: 2024/09/04 04:53:57 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat() : Animal::Animal("CAT")
+Dog::Dog() : AAnimal::AAnimal("DOG")
 {
-	this->type = Animal::getType();
-	std::cout << "Cat default constructor has been called" << std::endl;
+	this->type = AAnimal::getType();
+	std::cout << "Default Dog constructor has been called" << std::endl;
+	this->brain = new Brain();
 }
 
-Cat::Cat(const Cat &copy) : Animal::Animal(copy)
+Dog::Dog(const Dog &copy) : AAnimal::AAnimal(copy)
 {
 	std::cout << "Copy contructor has been called" << std::endl;
 	*this = copy;
 }
 
-Cat::~Cat() 
+Dog::~Dog()
 {
-	std::cout << "Cat default destructor has been called" << std::endl;
+	std::cout << "Dog destructor has been called" << std::endl;
+	delete this->brain;
 }
 
-Cat	&Cat::operator=(const Cat &op)
+Dog	&Dog::operator=(const Dog &op)
 {
 	if (this != &op) 
 		this->type = op.type;
 	return *this;
 }
 
-void	Cat::makeSound() const
+void	Dog::makeSound() const
 {
-	std::cout << "Cat : Meow !" << std::endl;
+	std::cout << "Dog : Ouaf !" << std::endl;
 }

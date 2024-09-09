@@ -6,48 +6,25 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:54:38 by greg              #+#    #+#             */
-/*   Updated: 2024/09/04 05:05:26 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/04 05:02:36 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "WrongAnimal.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 
-// int main()
-// {
-// const Animal* meta = new Animal();
-// const Animal* j = new Dog();
-// const Animal* i = new Cat();
-// std::cout << j->getType() << " " << std::endl;
-// std::cout << i->getType() << " " << std::endl;
-// i->makeSound(); //will output the cat sound!
-// j->makeSound();
-// meta->makeSound();
+int	main() 
+{
+	Cat		Felix;
+	Dog		Rex;
 
-// delete i;
-// delete j;
-// delete meta;
+	std::cout << Felix.getType() << " " << std::endl;
+	std::cout << Rex.getType() << " " << std::endl;
 
-// return 0;
-// }
-
-
-int	main() {
-	WrongAnimal	*unknown = new WrongAnimal();
-	Dog		*dog = new Dog();
-
-	std::cout << unknown->getType() << " " << std::endl;
-	std::cout << dog->getType() << " " << std::endl;
-
-	unknown->makeSound();
-	dog->makeSound();
-	delete unknown;
-
-	unknown = new WrongCat();
-	unknown->makeSound();
-	delete dog;
-	delete unknown;
+	Rex.makeSound();
+	Felix.makeSound();
 }
