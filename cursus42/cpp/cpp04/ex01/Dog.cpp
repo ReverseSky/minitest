@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:17:32 by greg              #+#    #+#             */
-/*   Updated: 2024/09/04 02:03:20 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/09 16:12:44 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,9 @@ Dog	&Dog::operator=(const Dog &op)
 void	Dog::makeSound() const
 {
 	std::cout << "Dog : Ouaf !" << std::endl;
+}
+
+Brain	*Dog::getBrain() const
+{
+	return (this->brain);
 }
