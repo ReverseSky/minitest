@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:08:25 by greg              #+#    #+#             */
-/*   Updated: 2024/09/04 04:53:55 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/09 17:41:33 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ public:
 
 	Dog	&operator=(const Dog &op);
 	void	makeSound(void) const;
-	
+	Brain *getBrain() const;
+
 	private:
 	Brain *brain;	
 };

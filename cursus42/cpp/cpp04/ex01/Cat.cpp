@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:02:02 by greg              #+#    #+#             */
-/*   Updated: 2024/09/09 16:29:48 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/09 18:00:34 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat()
 {
-	this->type = Animal::getType();
+	this->type = "Cat";
 	std::cout << "Cat default constructor has been called" << std::endl;
 	this->brain = new Brain();
 }
@@ -35,7 +35,7 @@ Cat::~Cat()
 Cat	&Cat::operator=(const Cat &op)
 {
 	this->Animal::operator=(op);
-	this->brain = op.brain;
+	*this->brain = *op.brain;
 
 	return *this;
 }

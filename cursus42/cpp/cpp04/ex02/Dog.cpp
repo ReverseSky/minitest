@@ -6,39 +6,46 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:17:32 by greg              #+#    #+#             */
-/*   Updated: 2024/09/04 04:53:57 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/09 18:00:10 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : AAnimal::AAnimal("DOG")
+Dog::Dog()
 {
-	this->type = AAnimal::getType();
-	std::cout << "Default Dog constructor has been called" << std::endl;
+	this->type = "Dog";
+	std::cout << "Dog default constructor has been called" << std::endl;
 	this->brain = new Brain();
 }
 
 Dog::Dog(const Dog &copy) : AAnimal::AAnimal(copy)
 {
 	std::cout << "Copy contructor has been called" << std::endl;
+	this->brain = new Brain();
 	*this = copy;
 }
 
-Dog::~Dog()
+Dog::~Dog() 
 {
-	std::cout << "Dog destructor has been called" << std::endl;
 	delete this->brain;
+	std::cout << "Dog default destructor has been called" << std::endl;
 }
 
 Dog	&Dog::operator=(const Dog &op)
 {
-	if (this != &op) 
-		this->type = op.type;
+	this->AAnimal::operator=(op);
+	*this->brain = *op.brain;
+
 	return *this;
 }
 
 void	Dog::makeSound() const
 {
 	std::cout << "Dog : Ouaf !" << std::endl;
+}
+
+Brain	*Dog::getBrain() const
+{
+	return (this->brain);
 }

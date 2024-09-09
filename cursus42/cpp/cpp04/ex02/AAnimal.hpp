@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:24:38 by greg              #+#    #+#             */
-/*   Updated: 2024/09/09 16:35:55 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/09 17:53:13 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ class AAnimal
 		virtual void	makeSound() const = 0;
 		AAnimal	&operator=(const AAnimal &op);
 		std::string	getType() const;
-		void	setType();
-
 	protected:
 		std::string type;
 

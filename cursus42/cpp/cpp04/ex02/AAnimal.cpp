@@ -6,13 +6,13 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:54:45 by greg              #+#    #+#             */
-/*   Updated: 2024/09/04 04:52:36 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/09 17:39:52 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
 
-AAnimal::AAnimal() : type("UNKNOWN")
+AAnimal::AAnimal() : type("AAnimal")
 {
 	std::cout << "AAnimal default constructor has been called" << std::endl;
 }
@@ -34,8 +34,7 @@ AAnimal::~AAnimal()
 
 AAnimal	&AAnimal::operator=(const AAnimal &op)
 {
-	if (this != &op) 
-		this->type = op.type;
+	this->type = op.type;
 	return *this;
 }
 
@@ -47,9 +46,4 @@ void	AAnimal::makeSound() const
 std::string	AAnimal::getType() const
 {
 	return (this->type);
-}
-
-void	AAnimal::setType()
-{
-	this->type = type;
 }

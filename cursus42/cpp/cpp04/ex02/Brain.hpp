@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 01:54:27 by greg              #+#    #+#             */
-/*   Updated: 2024/09/04 04:51:56 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/09 17:53:05 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ public:
 	Brain &operator=(const Brain &op);
 	void addIdea(std::string idea);
 	const std::string	&getIdea(unsigned int index) const;
+	std::string ideas[100];
+
 
 private:
-	std::string ideas[100];
 	unsigned int	size;
 
 };

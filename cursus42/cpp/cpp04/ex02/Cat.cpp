@@ -6,15 +6,15 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:02:02 by greg              #+#    #+#             */
-/*   Updated: 2024/09/04 04:53:26 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/09 18:00:02 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : AAnimal::AAnimal("CAT")
+Cat::Cat()
 {
-	this->type = AAnimal::getType();
+	this->type = "Cat";
 	std::cout << "Cat default constructor has been called" << std::endl;
 	this->brain = new Brain();
 }
@@ -22,6 +22,7 @@ Cat::Cat() : AAnimal::AAnimal("CAT")
 Cat::Cat(const Cat &copy) : AAnimal::AAnimal(copy)
 {
 	std::cout << "Copy contructor has been called" << std::endl;
+	this->brain = new Brain();
 	*this = copy;
 }
 
@@ -33,12 +34,18 @@ Cat::~Cat()
 
 Cat	&Cat::operator=(const Cat &op)
 {
-	if (this != &op) 
-		this->type = op.type;
+	this->AAnimal::operator=(op);
+	*this->brain = *op.brain;
+
 	return *this;
 }
 
 void	Cat::makeSound() const
 {
 	std::cout << "Cat : Meow !" << std::endl;
+}
+
+Brain	*Cat::getBrain() const
+{
+	return (this->brain);
 }
