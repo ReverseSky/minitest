@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 22:40:45 by greg              #+#    #+#             */
-/*   Updated: 2024/09/05 18:30:14 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/11 18:37:30 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,4 @@ AMateria &	AMateria::operator=(AMateria const &op)
 	return *this;
 }
 
-void	AMateria::use(int index, ICharacter &target) 
-{
-	(void)index;
-	(void)target;
-}
+void	AMateria::use(int, ICharacter &	) {}

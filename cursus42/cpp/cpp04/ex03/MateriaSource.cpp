@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 13:50:10 by greg              #+#    #+#             */
-/*   Updated: 2024/09/05 18:25:42 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/11 18:33:34 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ IMateriaSource::~IMateriaSource() {
 	std::cout << "IMateriaSource interface default destructor called." << std::endl;
 }
 
-MateriaSource &	MateriaSource::operator=(MateriaSource const &rSym) {
-	if (this != &rSym) {
-		this->size = rSym.size;
+MateriaSource &	MateriaSource::operator=(MateriaSource const &op) {
+	if (this != &op) {
+		this->size = op.size;
 		int index = -1; while (++index < 4)
-			this->materias[index] = rSym.materias[index];
+			this->materias[index] = op.materias[index];
 	}
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 22:39:49 by greg              #+#    #+#             */
-/*   Updated: 2024/09/05 18:16:50 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/11 18:30:43 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 Character::Character(const std::string name) : size(0), name(name)
 {
+	std::cout << "Character default constructor called for " << this->name << std::endl;
 	int index = -1; while (++index < 4)
 		this->inventory[index] = NULL;
 }
 
 Character::Character(const Character& copy)
 {
+	std::cout << "Character copy constructor called." << std::endl;
 	*this = copy;
 }
 
