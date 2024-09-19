@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 13:54:10 by greg              #+#    #+#             */
-/*   Updated: 2024/09/11 18:37:54 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/11 18:46:45 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class AMateria {
 		std::string const &	getType() const;
 
 		virtual AMateria	*clone() const = 0;
-		virtual void		use(int idx, ICharacter &target);
+		virtual void		use(ICharacter &target);
 
 protected:
 	std::string type;
