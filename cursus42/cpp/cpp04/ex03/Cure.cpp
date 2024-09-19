@@ -6,13 +6,13 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 16:49:55 by greg              #+#    #+#             */
-/*   Updated: 2024/09/05 18:30:46 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/19 13:45:02 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria::AMateria("CURE")
+Cure::Cure() : AMateria::AMateria("cure")
 {
 	std::cout << "Cure default constructor has been called" << std::endl;
 	this->type = AMateria::type;

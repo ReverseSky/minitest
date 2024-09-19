@@ -6,13 +6,13 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 21:45:22 by greg              #+#    #+#             */
-/*   Updated: 2024/09/05 18:30:53 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/19 13:45:10 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria::AMateria("ICE")
+Ice::Ice() : AMateria::AMateria("ice")
 {
 	std::cout << "Ice default constructor has been called" << std::endl;
 	this->type = AMateria::type;
