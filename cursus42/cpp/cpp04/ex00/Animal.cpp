@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:54:45 by greg              #+#    #+#             */
-/*   Updated: 2024/09/02 17:59:12 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/19 14:54:46 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,4 @@ void	Animal::makeSound() const
 std::string	Animal::getType() const
 {
 	return (this->type);
-}
-
-void	Animal::setType()
-{
-	this->type = type;
 }
