@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 18:02:22 by greg              #+#    #+#             */
-/*   Updated: 2024/09/02 18:06:27 by greg             ###   ########.fr       */
+/*   Created: 2024/12/19 02:23:06 by greg              #+#    #+#             */
+/*   Updated: 2024/12/19 02:35:05 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#pragma once
-
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef SCALARCONVERTER_HPP
+#define SCALARCONVERTER_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <string>
+#include <climits>
+#include <limits.h>
+#include <float.h>
+#include <cstdlib>
 
-class WrongAnimal
+class ScalarConverter
 {
-	public:
-		WrongAnimal();
-		WrongAnimal(std::string type);
-		WrongAnimal(const WrongAnimal &copy);
-		~WrongAnimal();
 
-		void	makeSound() const;
-		WrongAnimal	&operator=(const WrongAnimal &op);
-		std::string	getType() const;
-		void	setType();
+public:
+	ScalarConverter(const ScalarConverter &copy);
+	~ScalarConverter();
 
-	protected:
-		std::string type;
+	ScalarConverter	&operator=(ScalarConverter const &op);
+	static void	convert(std::string param);
+private:
+	ScalarConverter();
 
 };
+
+
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 22:39:49 by greg              #+#    #+#             */
-/*   Updated: 2024/09/11 18:30:43 by greg             ###   ########.fr       */
+/*   Updated: 2024/09/22 12:43:18 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,10 @@ void	Character::use(int index, ICharacter &target)
 	if (this->inventory[index] == NULL) {
 		std::cout << "Nothing in slot " << index << " of " << this->name << "'s inventory." << std::endl; return;
 	}
-	if (this->inventory[index]->getType() == "ICE") {
+	if (this->inventory[index]->getType() == "ice") {
 		Ice *ice = dynamic_cast<Ice *>(this->inventory[index]); ice->use(target);
 	}
-	else if (this->inventory[index]->getType() == "CURE") {
+	else if (this->inventory[index]->getType() == "cure") {
 		Cure *cure = dynamic_cast<Cure *>(this->inventory[index]); cure->use(target);
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 18:02:22 by greg              #+#    #+#             */
-/*   Updated: 2024/09/19 14:43:23 by grobledo         ###   ########.fr       */
+/*   Updated: 2024/09/02 18:06:27 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class WrongAnimal
 		void	makeSound() const;
 		WrongAnimal	&operator=(const WrongAnimal &op);
 		std::string	getType() const;
+		void	setType();
+
 	protected:
 		std::string type;
 
