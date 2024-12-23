@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:36:17 by greg              #+#    #+#             */
-/*   Updated: 2024/12/19 16:49:24 by greg             ###   ########.fr       */
+/*   Created: 2024/12/19 17:07:02 by greg              #+#    #+#             */
+/*   Updated: 2024/12/19 17:15:17 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "ScalarConverter.hpp"
+#ifndef DATA_HPP
+#define DATA_HPP
 
-int main(int argc, char** argv)
+#include <iostream>
+#include <string>
+
+class Data
 {
 
-	if (argc != 2) {
-		std::cout << "Usage: ./Convert <value>" << std::endl;
-		return 0;
-	}
+public:
+	Data();
+	Data(const Data &copy);
+	~Data();
 
-	ScalarConverter::convert(argv[1]);
-	
-	return 0;
-}
+	Data	&operator=(const Data &op);
+	int		getSize() const;
+
+private:
+	int	_size;
+};
+
+std::ostream	&operator<<(std::ostream & out, Data const &op);
+
+
+#endif

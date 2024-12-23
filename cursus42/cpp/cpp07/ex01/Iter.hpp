@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:36:17 by greg              #+#    #+#             */
-/*   Updated: 2024/12/19 16:49:24 by greg             ###   ########.fr       */
+/*   Created: 2024/12/19 18:48:12 by greg              #+#    #+#             */
+/*   Updated: 2024/12/19 18:53:41 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ITER_HPP
+#define ITER_HPP
+
 #include <iostream>
-#include "ScalarConverter.hpp"
+#include <string>
 
-int main(int argc, char** argv)
-{
+template<typename T>
+void	iter(T *adress, int lenght, void (*fct)(T &var));
 
-	if (argc != 2) {
-		std::cout << "Usage: ./Convert <value>" << std::endl;
-		return 0;
-	}
+template<typename T>
+void	printValue(T val);
 
-	ScalarConverter::convert(argv[1]);
-	
-	return 0;
-}
+#endif

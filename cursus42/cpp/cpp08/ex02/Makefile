@@ -1,5 +1,5 @@
 SRC = *.cpp
-NAME = Convert
+NAME = Mutant
 CC = c++ -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 

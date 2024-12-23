@@ -1,27 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:36:17 by greg              #+#    #+#             */
-/*   Updated: 2024/12/19 16:49:24 by greg             ###   ########.fr       */
+/*   Created: 2024/12/19 18:04:38 by greg              #+#    #+#             */
+/*   Updated: 2024/12/19 18:23:38 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "ScalarConverter.hpp"
+#include "Base.hpp"
 
-int main(int argc, char** argv)
-{
-
-	if (argc != 2) {
-		std::cout << "Usage: ./Convert <value>" << std::endl;
-		return 0;
-	}
-
-	ScalarConverter::convert(argv[1]);
-	
-	return 0;
-}
+class A : public Base {};

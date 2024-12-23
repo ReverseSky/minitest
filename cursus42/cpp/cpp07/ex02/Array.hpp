@@ -1,40 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 02:23:06 by greg              #+#    #+#             */
-/*   Updated: 2024/12/19 17:22:11 by greg             ###   ########.fr       */
+/*   Created: 2024/12/22 04:57:44 by greg              #+#    #+#             */
+/*   Updated: 2024/12/22 06:26:37 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
 #include <iostream>
-#include <iomanip>
 #include <string>
-#include <climits>
-#include <limits.h>
-#include <float.h>
 #include <cstdlib>
+#include <stdexcept>
 
-class ScalarConverter
+template<typename T>
+class Array
 {
 
 public:
-	ScalarConverter	&operator=(ScalarConverter const &op);
-	
-	static void	convert(std::string param);
+	Array();
+	Array(unsigned int n);
+	Array(const Array &copy);
+	~Array();
+
+	Array	&operator=(const Array &op);
+	T	operator[](int n) const;
+	T	&operator[](int n);
+	int	size() const;
+
+
+	class OutOfBoundException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw();
+	};
 private:
-	ScalarConverter();
-	ScalarConverter(const ScalarConverter &copy);
-	~ScalarConverter();
-
-
+	T	*_array;
+	T	_size;
 };
+
 
 
 

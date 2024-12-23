@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Functions.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:36:17 by greg              #+#    #+#             */
-/*   Updated: 2024/12/19 16:49:24 by greg             ###   ########.fr       */
+/*   Created: 2024/12/19 18:31:03 by greg              #+#    #+#             */
+/*   Updated: 2024/12/19 18:33:54 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FUNCTIONS_HPP
+#define FUNCTIONS_HPP
+
 #include <iostream>
-#include "ScalarConverter.hpp"
+#include <string>
 
-int main(int argc, char** argv)
-{
+template<typename T>
+void	swap(T &a, T &b);
 
-	if (argc != 2) {
-		std::cout << "Usage: ./Convert <value>" << std::endl;
-		return 0;
-	}
+template<typename T>
+T	min(T a, T b);
 
-	ScalarConverter::convert(argv[1]);
-	
-	return 0;
-}
+template<typename T>
+T	max(T a, T b);
+#endif

@@ -5,23 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:36:17 by greg              #+#    #+#             */
-/*   Updated: 2024/12/19 16:49:24 by greg             ###   ########.fr       */
+/*   Created: 2024/12/19 17:27:27 by greg              #+#    #+#             */
+/*   Updated: 2024/12/19 18:03:40 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
+#include "Data.hpp"
 
-int main(int argc, char** argv)
-{
+int	main() {
+	Data *		data = new Data;
+	uintptr_t	raw;
 
-	if (argc != 2) {
-		std::cout << "Usage: ./Convert <value>" << std::endl;
-		return 0;
-	}
+	std::cout << "Data : " << data << std::endl;
 
-	ScalarConverter::convert(argv[1]);
-	
+	raw = Serializer::serialize(data);
+
+	std::cout << "Data Serialized : " << raw << std::endl;
+
+	data = Serializer::deserialize(raw);
+
+	std::cout << "Data unserialized : " << data << std::endl;
+
+	delete data;
 	return 0;
 }

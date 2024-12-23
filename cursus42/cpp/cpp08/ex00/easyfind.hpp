@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:36:17 by greg              #+#    #+#             */
-/*   Updated: 2024/12/19 16:49:24 by greg             ###   ########.fr       */
+/*   Created: 2024/12/22 07:14:48 by greg              #+#    #+#             */
+/*   Updated: 2024/12/22 07:17:37 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _EASYFIND_HPP_
+#define _EASYFIND_HPP_
+
 #include <iostream>
-#include "ScalarConverter.hpp"
+#include <string>
+#include <algorithm>
+#include <list>
+#include <stdexcept>
 
-int main(int argc, char** argv)
+class NoValueException : public std::exception 
 {
+	public:
+		virtual const char *	what() const throw();
+};
 
-	if (argc != 2) {
-		std::cout << "Usage: ./Convert <value>" << std::endl;
-		return 0;
-	}
+template <typename T>
+int	easyfind(const T &array, int val);
 
-	ScalarConverter::convert(argv[1]);
-	
-	return 0;
-}
+#endif

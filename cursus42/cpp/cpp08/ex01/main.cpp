@@ -5,23 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:36:17 by greg              #+#    #+#             */
-/*   Updated: 2024/12/19 16:49:24 by greg             ###   ########.fr       */
+/*   Created: 2024/12/22 09:36:48 by greg              #+#    #+#             */
+/*   Updated: 2024/12/22 10:25:18 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "ScalarConverter.hpp"
+#include "Span.hpp"
 
-int main(int argc, char** argv)
-{
+int main() {
+	Span	array(10000);
 
-	if (argc != 2) {
-		std::cout << "Usage: ./Convert <value>" << std::endl;
-		return 0;
+	srand(time(NULL));
+	try {
+		array.addVarious(10);
+		// array.addNumber(10);
+		// array.addNumber(5);
+		// array.addNumber(14);
+		// array.addNumber(3);
+		// array.addNumber(7);
+	}
+	catch(const std::exception & e) {
+		std::cout << e.what() << std::endl;
 	}
 
-	ScalarConverter::convert(argv[1]);
-	
+	std::cout << array.longestSpan() << std::endl;
+	std::cout << array.shortestSpan() << std::endl;
+
 	return 0;
 }
