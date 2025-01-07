@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 06:22:01 by greg              #+#    #+#             */
-/*   Updated: 2024/12/18 18:55:57 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 17:30:50 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ public:
 	~Bureaucrat();
 	
 	Bureaucrat	&operator=(const Bureaucrat &op);
+
 	std::string	getname() const;
-	
 	int			getgrade() const;
+	void		setgrade(int grade);
 
 	void		promote();
 	void		demote();

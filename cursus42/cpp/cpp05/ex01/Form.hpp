@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:37:31 by greg              #+#    #+#             */
-/*   Updated: 2024/12/17 16:09:29 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 17:08:07 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
-#include "Bureaucrat.hpp"
 
+#include "Bureaucrat.hpp"
 #include <iostream>
 #include <string>
 #include <stdexcept>
@@ -30,6 +30,7 @@ public:
 	~Form();
 	
 	Form	&operator=(const Form &op);
+
 	std::string	getname() const;
 	bool		getsigned() const;
 	int			getsigngrade() const;

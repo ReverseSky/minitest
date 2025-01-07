@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:37:23 by greg              #+#    #+#             */
-/*   Updated: 2024/12/18 19:05:19 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 17:50:15 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,13 @@ int	AForm::getexecgrade() const
 void	AForm::beSigned(Bureaucrat &signer)
 {
 	if (signer.getgrade() > this->_signgrade)
+	{
 		throw(Bureaucrat::GradeTooLowException());
+		std::cout << signer.getname() << " couldn't sign " << this->getname() << " because : ";
+	}
 	else if (this->getsigned() == false)
 	{
 		this->_signed = true;
-		std::cout << this->getname() << " Form was signed by " << signer.getname() << std::endl;
 	}
 	else
 		std::cout << "The form " <<  this->_name << " is already signed." << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:36:47 by greg              #+#    #+#             */
-/*   Updated: 2024/12/19 02:21:42 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 18:16:34 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,15 @@ void	ShrubberyCreationForm::execute(Bureaucrat &executor) const
 		throw (AForm::AFormNotSignedException());
 	else
 	{
-	std::string		outfile = executor.getname() + "_shrubbery";
-	std::ofstream	output(outfile.c_str());
-	
-	executor.executeForm(*this);
+		executor.executeForm(*this);
+		std::string		outfile = executor.getname() + "_shrubbery";
+		std::ofstream	output(outfile.c_str());
+		if (!output)
+		{
+			std::cerr << "Error opening file!" << std::endl;
+			return;
+		}
+
 		output << "       _-_" << std::endl;
 		output << "    /~~   ~~\\" << std::endl;
 		output << " /~~         ~~\\" << std::endl;
@@ -53,6 +58,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat &executor) const
 		output << "_- -   | | _- _" << std::endl;
 		output << "  _ -  | |   -_" << std::endl;
 		output << "      // \\\\" << std::endl;
+		output.close();
 	}
 }
 

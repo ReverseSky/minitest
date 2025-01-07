@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucraft.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 06:23:25 by greg              #+#    #+#             */
-/*   Updated: 2024/12/11 14:12:33 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 16:50:24 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 Bureaucrat::Bureaucrat()
 {
 	std::cout << "Bureaucrat default constructor called" << std::endl;
-}
-Bureaucrat::Bureaucrat(Bureaucrat const &copy)
-{
-	std::cout << "Bureaucrat copy constructor called" << std::endl;
-	*this = copy;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
@@ -31,6 +26,11 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_grade = grade;
+}
+Bureaucrat::Bureaucrat(Bureaucrat const &copy)
+{
+	std::cout << "Bureaucrat copy constructor called" << std::endl;
+	*this = copy;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -58,6 +58,11 @@ std::string	Bureaucrat::getname() const
 int	Bureaucrat::getgrade() const
 {
 	return	this->_grade;
+}
+
+void	Bureaucrat::setgrade(int grade)
+{
+	this->_grade = grade;
 }
 
 void	Bureaucrat::promote()

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucraft.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 06:23:25 by greg              #+#    #+#             */
-/*   Updated: 2024/12/18 19:07:23 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 18:51:17 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,11 @@ std::string	Bureaucrat::getname() const
 int	Bureaucrat::getgrade() const
 {
 	return	this->_grade;
+}
+
+void	Bureaucrat::setgrade(int grade)
+{
+	this->_grade = grade;
 }
 
 void	Bureaucrat::promote()

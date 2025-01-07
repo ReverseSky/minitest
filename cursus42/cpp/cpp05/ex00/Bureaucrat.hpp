@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 06:22:01 by greg              #+#    #+#             */
-/*   Updated: 2024/12/11 13:48:53 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 16:50:21 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
 	
 	std::string	getname() const;
 	int			getgrade() const;
+	void		setgrade(int grade);
 
 	void		promote();
 	void		demote();

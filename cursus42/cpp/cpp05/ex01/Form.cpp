@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:37:23 by greg              #+#    #+#             */
-/*   Updated: 2024/12/17 16:33:31 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 17:35:32 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ Form	&Form::operator=(const Form &op)
 
 std::ostream	&operator<<(std::ostream & out, Form const &op)
 {
-	out << "Form " << op.getname() << " need to bee minimum grade " << op.getsigngrade() << " to be signed and " << op.getexecgrade() << " to be exectuted." << std::endl;
 	if (op.getsigned() == true)
 		std::cout << "This form is signed" << std::endl;
 	else
@@ -71,11 +70,13 @@ int	Form::getexecgrade() const
 void	Form::beSigned(Bureaucrat &signer)
 {
 	if (signer.getgrade() > this->_signgrade)
+	{
+		std::cout << signer.getname() << " couldn't sign " << this->getname() << " because : ";
 		throw(Bureaucrat::GradeTooLowException());
+	}
 	else if (this->getsigned() == false)
 	{
 		this->_signed = true;
-		std::cout << this->getname() << " Form was signed by " << signer.getname() << std::endl;
 	}
 	else
 		std::cout << "The form " <<  this->_name << " is already signed." << std::endl;

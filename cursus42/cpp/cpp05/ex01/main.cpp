@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 06:20:03 by greg              #+#    #+#             */
-/*   Updated: 2024/12/18 19:09:05 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 17:35:00 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,24 @@ int	main()
 	{
 		David = new Bureaucrat("David", 55);
 		simpleDoc = new Form("Simple Document", 50, 50);
-		simpleDoc->beSigned(*David);
+		David->signForm(*simpleDoc);
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
 	
+	std::cout << std::endl;
+	
 	try 
 	{
 		Pierre = new Bureaucrat("Pierre", 35);
-		simpleDoc->beSigned(*Pierre);
+		Pierre->signForm(*simpleDoc);
 		David->promote();
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
+	
 	std::cout << *simpleDoc << std::endl;
 	delete David;
 	delete Pierre;

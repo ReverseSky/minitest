@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:37:23 by greg              #+#    #+#             */
-/*   Updated: 2024/12/19 01:55:55 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 17:18:32 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,10 @@ int	AForm::getexecgrade() const
 void	AForm::beSigned(Bureaucrat &signer)
 {
 	if (signer.getgrade() > this->_signgrade)
+	{
+		std::cout << signer.getname() << " couldn't sign " << this->getname() << "because : ";
 		throw(Bureaucrat::GradeTooLowException());
+	}
 	else if (this->getsigned() == false)
 	{
 		this->_signed = true;
@@ -86,11 +89,11 @@ void	AForm::beSigned(Bureaucrat &signer)
 
 const char	*AForm::GradeTooHighException::what() const throw()
 {
-	return ("Grade to high.");
+	return ("Grade is to high.");
 }
 const char	*AForm::GradeTooLowException::what() const throw()
 {
-	return ("Grade too low.");
+	return ("Grade is too low.");
 }
 
 const char *AForm::AFormNotSignedException::what(void) const throw()

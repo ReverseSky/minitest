@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 06:20:03 by greg              #+#    #+#             */
-/*   Updated: 2024/12/18 19:21:28 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 18:18:44 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,28 @@
 #include "ShrubberyCreationForm.hpp"
 
 int	main() {
-	Bureaucrat *	David = new Bureaucrat("David", 2);
-	Bureaucrat *	Pierre = new Bureaucrat("Pierre", 10);
-	Bureaucrat *	Paul = new Bureaucrat("Paul", 65);
+	Bureaucrat	*David = new Bureaucrat("David", 2);
+	Bureaucrat	*Pierre = new Bureaucrat("Pierre", 10);
+	Bureaucrat	*Paul = new Bureaucrat("Paul", 65);
 	std::cout << std::endl;
-
-	AForm *			shru = new ShrubberyCreationForm(*Pierre);
-	AForm *			robot = new RobotomyRequestForm(*David);
+	
+	AForm		*shru = new ShrubberyCreationForm(*Paul);
+	AForm		*robot = new RobotomyRequestForm(*Pierre);
+	AForm		*pres = new PresidentialPardonForm(*David);
 	std::cout << std::endl;
 
 	try {
-		robot->beSigned(*Paul);
+		Paul->signForm(*shru);
 		std::cout << std::endl;
-		shru->beSigned(*Pierre);
+		Pierre->signForm(*robot);
 		std::cout << std::endl;
-		robot->execute(*David);
+		David->signForm(*pres);
 		std::cout << std::endl;
-		shru->execute(*David);
+		robot->execute(*Pierre);
+		std::cout << std::endl;
+		pres->execute(*David);
+		std::cout << std::endl;
+		shru->execute(*Paul);
 		std::cout << std::endl;
 	}
 	catch(const std::exception& e) {
@@ -42,9 +47,12 @@ int	main() {
 
 	std::cout << *shru << std::endl;
 	std::cout << *robot << std::endl;
+	std::cout << *pres << std::endl;
+	std::cout << std::endl;
 
 	delete robot;
 	delete shru;
+	delete pres;
 	delete Paul;
 	delete Pierre;
 	delete David;
