@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 06:20:03 by greg              #+#    #+#             */
-/*   Updated: 2024/12/19 02:21:10 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 19:36:29 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,38 +24,42 @@ int	main() {
 	std::cout << std::endl;
 	Intern *		stagiaire = new Intern();
 	std::cout << std::endl;
-	AForm *			shrub = NULL;
+	AForm *			shru = NULL;
 	AForm *			robot = NULL;
 	AForm *			ppf = NULL;
 
 	try {
-		shrub = stagiaire->makeForm("ShrubberyCreationForm", *Paul);
-		shrub->beSigned(*Paul);
+		shru = stagiaire->makeForm("ShrubberyCreationForm", *Paul);
 		std::cout << std::endl;
 		robot = stagiaire->makeForm("RobotomyRequestForm", *Pierre);
-		robot->beSigned(*David);
-		std::cout << std::endl;
-		robot->execute(*Pierre);
-		std::cout << std::endl;
-		shrub->execute(*David);
-		std::cout << std::endl;
-		// ppf->execute(*David);
 		std::cout << std::endl;
 		ppf = stagiaire->makeForm("PresidentialPardonForm", *David);
 		// ppf = stagiaire->makeForm("presidentiaf pardon", *Paul);
+
 		std::cout << std::endl;
-		ppf->beSigned(*David);
+
+		Paul->signForm(*shru);
+		Pierre->signForm(*robot);
+		David->signForm(*ppf);
+
+		std::cout << std::endl;
+		robot->execute(*Pierre);
+		std::cout << std::endl;
+		shru->execute(*Paul);
+		std::cout << std::endl;
+		ppf->execute(*David);
+		std::cout << std::endl;
 	}
 	catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
 
-	std::cout << *shrub << std::endl;
+	std::cout << *shru << std::endl;
 	std::cout << *robot << std::endl;
 
 	delete ppf;
 	delete robot;
-	delete shrub;
+	delete shru;
 	delete stagiaire;
 	delete Paul;
 	delete Pierre;

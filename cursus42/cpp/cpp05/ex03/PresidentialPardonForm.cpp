@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:09:34 by greg              #+#    #+#             */
-/*   Updated: 2024/12/18 19:18:37 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/07 19:25:40 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,11 @@ void	PresidentialPardonForm::execute(Bureaucrat &executor) const
 
 std::ostream	&operator<<(std::ostream &out, PresidentialPardonForm const &op)
 {
-	out << "Form name : " << op.getname() << " need grade " << op.getsigngrade() << " to be signed and " << op.getexecgrade() << " to be executed" <<std::endl;
-	std::cout << "The document is ";
-	if (op.getsigned() == false)
-		std::cout << "not ";
-	std::cout << "signed." << std::endl;
-	return (out);
+	if (op.getsigned() == true)
+		std::cout << "The form " << op.getname() << " is signed" << std::endl;
+	else
+		std::cout << "The form " << op.getname() << " is not signed" << std::endl;
+	return out;
 }
 
 
