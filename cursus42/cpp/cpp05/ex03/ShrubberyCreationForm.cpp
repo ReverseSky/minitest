@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:36:47 by greg              #+#    #+#             */
-/*   Updated: 2025/01/07 19:25:49 by grobledo         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:28:38 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	ShrubberyCreationForm::execute(Bureaucrat &executor) const
 		throw (AForm::AFormNotSignedException());
 	else
 	{
-		executor.executeForm(*this);
 		std::string		outfile = executor.getname() + "_shrubbery";
 		std::ofstream	output(outfile.c_str());
 		if (!output)

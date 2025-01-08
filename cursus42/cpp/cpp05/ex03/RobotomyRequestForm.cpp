@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:18:02 by greg              #+#    #+#             */
-/*   Updated: 2025/01/07 19:25:44 by grobledo         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:28:34 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	RobotomyRequestForm::execute(Bureaucrat &executor) const
 		throw (AForm::AFormNotSignedException());
 	else
 	{
-		executor.executeForm(*this);
 		std::cout << "Some drilling noise" << std::endl;
 		srand(time(NULL));
 		int	nb = rand() % 100 + 1;

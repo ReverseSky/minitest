@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucraft.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 06:23:25 by greg              #+#    #+#             */
-/*   Updated: 2025/01/07 18:51:17 by grobledo         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:28:14 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,6 @@ void	Bureaucrat::executeForm(AForm const & form)
 		std::cout << this->_name << " can't execute " << form.getname() << "." << std::endl;
 		throw AForm::GradeTooLowException();
 	}
+	form.execute(*this);
 	std::cout << this->_name << " executed " << form.getname() << "." << std::endl;
 }

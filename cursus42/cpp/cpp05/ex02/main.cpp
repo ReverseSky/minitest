@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 06:20:03 by greg              #+#    #+#             */
-/*   Updated: 2025/01/07 18:18:44 by grobledo         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:23:52 by greg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int	main() {
 		std::cout << std::endl;
 		David->signForm(*pres);
 		std::cout << std::endl;
-		robot->execute(*Pierre);
+		Pierre->executeForm(*robot);
 		std::cout << std::endl;
-		pres->execute(*David);
+		David->executeForm(*pres);
 		std::cout << std::endl;
-		shru->execute(*Paul);
+		Paul->executeForm(*shru);
 		std::cout << std::endl;
 	}
 	catch(const std::exception& e) {
