@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greg <greg@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 06:20:03 by greg              #+#    #+#             */
-/*   Updated: 2025/01/08 17:40:17 by greg             ###   ########.fr       */
+/*   Updated: 2025/01/09 15:00:02 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	main() {
 		std::cout << std::endl;
 		robot = stagiaire->makeForm("RobotomyRequestForm", *Pierre);
 		std::cout << std::endl;
-		ppf = stagiaire->makeForm("PresidentialPardonForm", *David);
-		// ppf = stagiaire->makeForm("presidentiaf pardon", *Paul);
+		// ppf = stagiaire->makeForm("PresidentialPardonForm", *David);
+		ppf = stagiaire->makeForm("presidentiaf pardon", *Paul);
 
 		std::cout << std::endl;
 

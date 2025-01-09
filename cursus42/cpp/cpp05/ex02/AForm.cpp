@@ -6,7 +6,7 @@
 /*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:37:23 by greg              #+#    #+#             */
-/*   Updated: 2025/01/07 19:17:49 by grobledo         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:54:39 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ AForm	&AForm::operator=(const AForm &op)
 
 std::ostream	&operator<<(std::ostream & out, AForm const &op)
 {
+	out << "The form " << op.getname() << " need grade " << op.getsigngrade() 
+			<< " to be signed and " << op.getexecgrade() << " to be executed." << std::endl;
 	if (op.getsigned() == true)
 		std::cout << "The form " << op.getname() << " is signed" << std::endl;
 	else

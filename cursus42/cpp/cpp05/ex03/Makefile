@@ -1,5 +1,5 @@
 SRC = *.cpp
-NAME = Form
+NAME = Intern
 CC = c++ -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 SHRUB = *_shrubbery

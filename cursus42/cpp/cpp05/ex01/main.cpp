@@ -6,7 +6,7 @@
 /*   By: grobledo <grobledo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 06:20:03 by greg              #+#    #+#             */
-/*   Updated: 2025/01/07 17:35:00 by grobledo         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:49:27 by grobledo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	main() 
 {
-	Bureaucrat *	David = NULL;
-	Bureaucrat *	Pierre = NULL;
-	Form *			simpleDoc = NULL;
+	Bureaucrat 		*David = NULL;
+	Bureaucrat 		*Pierre = NULL;
+	Form 			*simpleDoc = NULL;
 
 	try 
 	{
