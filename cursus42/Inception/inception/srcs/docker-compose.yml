@@ -1,0 +1,46 @@
+version: '3.3'
+
+services:
+  mariadb:
+    container_name: mariadb
+    build: ./requirements/mariadb
+    restart: always  # Redémarre automatiquement en cas de cras
+    env_file:
+      - ./../secrets/.env
+      - .env  # Permet d'utiliser un fichier .env pour les variables sensibles
+    volumes:
+      - ~/data/mariadb:/var/lib/mysql  # Bind mount au lieu d un volume Docker
+    networks:
+      - inception
+
+  wordpress:
+    container_name: wordpress
+    build: ./requirements/wordpress
+    restart: always
+    depends_on:
+      - mariadb  # Assure que MariaDB est lancé avant WordPres
+    env_file:
+      - ./../secrets/.env
+      - .env
+    volumes:
+      - ~/data/wordpress:/var/www/html  # Bind mount pour WordPress
+    networks:
+      - inception
+
+  nginx:
+    container_name: nginx
+    build: ./requirements/nginx
+    restart: always
+    depends_on:
+      - wordpress  # Assure que WordPress est lancé avant Nginx
+    ports:
+      - "443:443"  # Expose Nginx en HTTPS
+    volumes:
+      - ~/data/wordpress:/var/www/html  # Bind mount pour WordPress
+      - ~/data/nginx/ssl:/data/nginx/ssl  # Volume pour les certificats SSL
+    networks:
+      - inception
+
+networks:
+  inception:
+    driver: bridge
